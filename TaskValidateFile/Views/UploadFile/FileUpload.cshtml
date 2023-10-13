@@ -1,0 +1,18 @@
+﻿@model TaskValidateFile.Models.ValidateFile
+
+<h2>File Upload</h2>
+
+@if (ViewBag.ResultErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ResultErrorMessage</div>
+}
+@* else{
+<div class="alert alert-danger">@ViewBag.ResultErrorMessage?</div>
+} *@
+<form asp-controller="UploadFile" asp-action="FileUpload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Select Files:</label>
+        <input type="file" name="files" class="form-control" multiple="multiple" />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload Files</button>
+</form>
